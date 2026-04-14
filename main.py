@@ -3,6 +3,9 @@ from src.feature_engineering import create_features
 from src.train_model import train_model
 from src.evaluate_model import evaluate_model
 from src.forecast import forecast_future
+from src.visualize import plot_results, plot_forecast
+
+import pandas as pd
 
 def main():
     
@@ -33,6 +36,10 @@ def main():
     # Step 7: Forecast future values
     future_predictions = forecast_future(model, X_test)
     print(future_predictions)
+
+    # Step 8: Visualize results
+    plot_results(y_test, y_pred)
+    plot_forecast(future_predictions)
 
 if __name__ == "__main__":
     main()
